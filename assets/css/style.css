@@ -1,19 +1,31 @@
-#train-table th,
-    td {
-      display: inline-block;
-      width: 16.575%;
-    }
+body {
+    background-image: url(../images/gratisography-subway-train-arrival.jpg);
+    background-size: contain;
+    opacity: .6;
+    font-family: 'Girassol', cursive;
+}
 
  .jumbotron {
-    background-color: blue; 
-    color: white;
- }   
+    font-family: 'Bungee', cursive;
+    background-color:transparent; 
+    color: #708E01;
+    margin-top: 15px;
+    
+}  
+ 
+ table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    text-align:center;
+    color: black;
+}
 
  .card-header {
-     background-color: blue;
-     color: white;
- }
+     background-color: #708E01;
+     color: whitesmoke;
+}
 
- .card-body {
-     border-color: blue;
- }
+#add-train-btn {
+    background-color: #708E01;
+    color: whitesmoke;
+}
