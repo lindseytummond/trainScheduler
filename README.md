@@ -6,11 +6,11 @@ Train Schedule application that incorporates Firebase to host arrival and depart
 
 Other resources: CSS, Bootstrap, jQuery, GoogleFonts, Firebase, moment.js
 
-### Link to game: 
+### Link to Train Scheduler: https://lindseytummond.github.io/trainScheduler/.
 
-### Instructions: placeholder
+### Instructions: 
 
-1.  Make sure that your app suits this below spec:
+1.  Make sure that your app suits this below specs:
   
     * When adding trains, administrators should be able to submit the following:
     
@@ -28,6 +28,6 @@ Other resources: CSS, Bootstrap, jQuery, GoogleFonts, Firebase, moment.js
   
 4.  Styling and theme are completely up to you. Get Creative!
 
-<a href="placeholder" target="_blank">
+<a href="https://lindseytummond.github.io/trainScheduler/." target="_blank">
    <img src="placeholder">
 </a>
