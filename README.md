@@ -29,5 +29,5 @@ Other resources: CSS, Bootstrap, jQuery, GoogleFonts, Firebase, moment.js
 4.  Styling and theme are completely up to you. Get Creative!
 
 <a href="https://lindseytummond.github.io/trainScheduler/." target="_blank">
-   <img src="placeholder">
+   <img src="assets/images/train-complete.png">
 </a>
