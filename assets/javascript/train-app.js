@@ -20,7 +20,7 @@ $("#add-train-btn").on("click", function(event) {
   // Grabs user input
   var trainName = $("#train-name-input").val().trim();
   var destination = $("#destination-input").val().trim();
-  var trainStart = moment($("#trainStart-input").val().trim(), "HH:mm").format("X");
+  var trainStart = moment($("#trainStart-input").val().trim(), "HH:mm").format("HH:mm");
   var frequency = $("#frequency-input").val().trim();
 
   // Creates local "temporary" object for holding train data
@@ -49,52 +49,46 @@ $("#add-train-btn").on("click", function(event) {
   $("#frequency-input").val("");
 });
 
-// // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-// database.ref().on("child_added", function(childSnapshot) {
-//   console.log(childSnapshot.val());
+ // 3. Create Firebase event for adding train schedule to the database and a row in the html when a user adds an entry
+ database.ref().on("child_added", function(childSnapshot) {
+   console.log(childSnapshot.val());
 
-//   // Store everything into a variable.
-//   var empName = childSnapshot.val().name;
-//   var empRole = childSnapshot.val().role;
-//   var empStart = childSnapshot.val().start;
-//   var empRate = childSnapshot.val().rate;
+   // Store everything into a variable.
+   var trainName = childSnapshot.val().trainName;
+   var destination = childSnapshot.val().destination;
+   var trainStart = childSnapshot.val().trainStart;
+   var frequency = childSnapshot.val().frequency;
 
-//   // Employee Info
-//   console.log(empName);
-//   console.log(empRole);
-//   console.log(empStart);
-//   console.log(empRate);
+  // Train Info
+  console.log(trainName);
+  console.log(destination);
+  console.log(trainStart);
+  console.log(frequency);
 
-//   // Prettify the employee start
-//   var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
+  //Changes the original moment by subtracting time.
+  firstTrainTimeConverted = moment(trainStart, "HH:mm").subtract(1, "years");
 
-//   // Calculate the months worked using hardcore math
-//   // To calculate the months worked
-//   var empMonths = moment().diff(moment(empStart, "X"), "months");
-//   console.log(empMonths);
+  var currentTime = moment();
+  
+  //To get the difference in minutes
+  var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
+    
+  //Getting the division remainder
+  var tRemainder = diffTime % frequency;
+  var minAway = frequency - tRemainder;
+  
+  var nextTrain = moment().add(minAway, "minutes");
+  var nextArrival = moment(nextTrain).format("HH:mm");
+  
+  // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(destination),
+    $("<td>").text(frequency),
+    $("<td>").text(nextArrival),
+    $("<td>").text(minAway),
+  );
 
-//   // Calculate the total billed rate
-//   var empBilled = empMonths * empRate;
-//   console.log(empBilled);
-
-//   // Create the new row
-//   var newRow = $("<tr>").append(
-//     $("<td>").text(empName),
-//     $("<td>").text(empRole),
-//     $("<td>").text(empStartPretty),
-//     $("<td>").text(empMonths),
-//     $("<td>").text(empRate),
-//     $("<td>").text(empBilled)
-//   );
-
-//   // Append the new row to the table
-//   $("#employee-table > tbody").append(newRow);
-// });
-
-// // Example Time Math
-// // -----------------------------------------------------------------------------
-// // Assume Employee start date of January 1, 2015
-// // Assume current date is March 1, 2016
-
-// // We know that this is 15 months.
-// // Now we will create code in moment.js to confirm that any attempt we use meets this test case
+  // Append the new row to the table
+  $("#train-table > tbody").append(newRow);
+ });
