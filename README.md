@@ -1,4 +1,4 @@
-# trainScheduler
+# Train Scheduler
 
 ### Overview:
 
@@ -10,9 +10,9 @@ Other resources: CSS, Bootstrap, jQuery, GoogleFonts, Firebase, moment.js
 
 ### Instructions: 
 
-1.  Make sure that your app suits this below specs:
+1.  App follows below specs:
   
-    * When adding trains, administrators should be able to submit the following:
+   * When adding trains, users are able to submit the following:
     
         * Train Name
     
@@ -22,11 +22,9 @@ Other resources: CSS, Bootstrap, jQuery, GoogleFonts, Firebase, moment.js
     
         * Frequency -- in minutes
   
-2.  Code this app to calculate when the next train will arrive; this should be relative to the current time.
+2.  App calculates when the next train will arrive; relative to the current time.
   
-3.  Users from many different machines must be able to view same train times.
-  
-4.  Styling and theme are completely up to you. Get Creative!
+3.  Users from many different machines are able to view same train times.
 
 <a href="https://lindseytummond.github.io/trainScheduler/." target="_blank">
    <img src="assets/images/train-complete.png">
