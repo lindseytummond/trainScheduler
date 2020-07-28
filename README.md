@@ -11,7 +11,7 @@ Lindsey Tummond
 
 ## Learning Points:
 - Initialize and use Firebase as a real time database
-- Utilization of `moment.js` to validate and manipulate displaying time in Javascript
+- Utilization of `Moment.js` to validate and manipulate displaying time in Javascript
 - Understanding of multiple files and how to link file structure
 
 ## Technologies:
@@ -29,6 +29,7 @@ Lindsey Tummond
 Use the following link https://lindseytummond.github.io/trainScheduler/ to open the application. <br>
 
 1.  Osbourne Train Service allows users to add train service based on:
+
         * Train Name
     
         * Destination 
